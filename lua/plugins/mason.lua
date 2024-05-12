@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
+		"jay-babu/mason-nvim-dap.nvim",
 	},
 	config = function()
 		local mason = require("mason")
@@ -10,20 +11,22 @@ return {
 		local lspconfig = require("lspconfig")
 		local cmp_lsp = require("cmp_nvim_lsp")
 
+		require("mason-nvim-dap").setup({
+			ensure_installed = { "codelldb" },
+		})
+
 		-- setup lspconfig --
 		local client_cp = vim.lsp.protocol.make_client_capabilities()
 		local capabilities = cmp_lsp.default_capabilities(client_cp)
 
-
 		mason.setup()
 		mason_lspconf.setup()
 
-
 		mason_lspconf.setup_handlers({
 			function(server)
-				lspconfig[server].setup {
+				lspconfig[server].setup({
 					capabilities = capabilities,
-				}
+				})
 			end,
 
 			["lua_ls"] = function()
