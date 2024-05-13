@@ -9,7 +9,6 @@ return {
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.godot" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
