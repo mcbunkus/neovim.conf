@@ -13,6 +13,7 @@ return {
   { import = "astrocommunity.pack.godot" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
 
   -- import/override with your plugins folder
 }
